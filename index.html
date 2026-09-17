@@ -159,33 +159,55 @@
         <p class="section-lead section-lead--light">The principles that guide every shipment we handle and
           every partnership we build.</p>
       </div>
-      <div class="mv-grid">
-        <article class="mv reveal">
-          <span class="mv__watermark">01</span>
-          <span class="mv__ic">✧</span>
-          <h3>Our Mission</h3>
-          <p>To deliver the freshest fruit and vegetables from the world's finest growing regions to
-            the Gulf — with uncompromising quality, an unbroken cold chain, and service our partners
-            can build their business on.</p>
-          <span class="mv__rule"></span>
-        </article>
-        <article class="mv reveal">
-          <span class="mv__watermark">02</span>
-          <span class="mv__ic">◎</span>
-          <h3>Our Vision</h3>
-          <p>To be the GCC's most trusted fresh-produce partner — the first name that premium
-            hotels, retailers and restaurants think of when they demand consistency, provenance and
-            reliability at scale.</p>
-          <span class="mv__rule"></span>
-        </article>
-        <article class="mv reveal">
-          <span class="mv__watermark">03</span>
-          <span class="mv__ic">❖</span>
-          <h3>Our Values</h3>
-          <p>Freshness first, integrity always. We source responsibly, price fairly, and honour every
-            commitment — treating each shipment as a promise kept to the people we serve.</p>
-          <span class="mv__rule"></span>
-        </article>
+      <div class="purpose reveal">
+        <div class="purpose__media">
+          <img class="pmedia is-active" data-i="0" src="https://images.unsplash.com/photo-1519996529931-28324d5a630e?auto=format&fit=crop&w=1000&q=75" alt="Fresh produce crates" loading="lazy" />
+          <img class="pmedia" data-i="1" src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=1000&q=75" alt="Abundant vegetables" loading="lazy" />
+          <img class="pmedia" data-i="2" src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1000&q=75" alt="Farmland at harvest" loading="lazy" />
+          <div class="purpose__glow" aria-hidden="true"></div>
+          <div class="purpose__badge">
+            <span class="purpose__badge-k">Guided by</span>
+            <strong id="purposeBadge">Freshness First</strong>
+          </div>
+        </div>
+
+        <div class="accordion" id="purposeAcc">
+          <div class="acc is-active" data-i="0" data-badge="Freshness First">
+            <button class="acc__head" aria-expanded="true">
+              <span class="acc__no">01</span>
+              <span class="acc__title">Our Mission</span>
+              <span class="acc__plus" aria-hidden="true"></span>
+            </button>
+            <div class="acc__body"><div class="acc__inner">
+              <p>To deliver the freshest fruit and vegetables from the world's finest growing regions to
+                the Gulf — with uncompromising quality, an unbroken cold chain, and service our partners
+                can build their business on.</p>
+            </div></div>
+          </div>
+          <div class="acc" data-i="1" data-badge="Trusted Partner">
+            <button class="acc__head" aria-expanded="false">
+              <span class="acc__no">02</span>
+              <span class="acc__title">Our Vision</span>
+              <span class="acc__plus" aria-hidden="true"></span>
+            </button>
+            <div class="acc__body"><div class="acc__inner">
+              <p>To be the GCC's most trusted fresh-produce partner — the first name that premium
+                hotels, retailers and restaurants think of when they demand consistency, provenance and
+                reliability at scale.</p>
+            </div></div>
+          </div>
+          <div class="acc" data-i="2" data-badge="Integrity Always">
+            <button class="acc__head" aria-expanded="false">
+              <span class="acc__no">03</span>
+              <span class="acc__title">Our Values</span>
+              <span class="acc__plus" aria-hidden="true"></span>
+            </button>
+            <div class="acc__body"><div class="acc__inner">
+              <p>Freshness first, integrity always. We source responsibly, price fairly, and honour every
+                commitment — treating each shipment as a promise kept to the people we serve.</p>
+            </div></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -199,42 +221,77 @@
         <p class="section-lead">A snapshot of the scale and reach behind every delivery.</p>
       </div>
 
-      <div class="stats-panel reveal">
-        <div class="stat">
-          <span class="stat__ic">🌍</span>
-          <span class="stat__num"><span class="count" data-target="50">0</span>+</span>
-          <span class="stat__label">Sourcing Countries</span>
-          <span class="stat__desc">Growers across six continents</span>
+      <div class="rings" id="rings">
+        <div class="ring-stat reveal" data-pct="86">
+          <div class="ring">
+            <svg viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="ring__bg" cx="60" cy="60" r="52"></circle>
+              <circle class="ring__fg" cx="60" cy="60" r="52"></circle>
+            </svg>
+            <div class="ring__center"><span class="count" data-target="50">0</span><i>+</i></div>
+          </div>
+          <span class="ring__label">Sourcing Countries</span>
+          <span class="ring__desc">Growers across six continents</span>
         </div>
-        <div class="stat">
-          <span class="stat__ic">🧭</span>
-          <span class="stat__num"><span class="count" data-target="6">0</span></span>
-          <span class="stat__label">GCC Markets Served</span>
-          <span class="stat__desc">UAE, KSA, Oman, Qatar, Bahrain, Kuwait</span>
+
+        <div class="ring-stat reveal" data-pct="100">
+          <div class="ring">
+            <svg viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="ring__bg" cx="60" cy="60" r="52"></circle>
+              <circle class="ring__fg" cx="60" cy="60" r="52"></circle>
+            </svg>
+            <div class="ring__center"><span class="count" data-target="6">0</span></div>
+          </div>
+          <span class="ring__label">GCC Markets Served</span>
+          <span class="ring__desc">UAE · KSA · Oman · Qatar · Bahrain · Kuwait</span>
         </div>
-        <div class="stat">
-          <span class="stat__ic">🍏</span>
-          <span class="stat__num"><span class="count" data-target="500">0</span>+</span>
-          <span class="stat__label">Product Lines</span>
-          <span class="stat__desc">Fresh &amp; dry, seasonal year-round</span>
+
+        <div class="ring-stat reveal" data-pct="92">
+          <div class="ring">
+            <svg viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="ring__bg" cx="60" cy="60" r="52"></circle>
+              <circle class="ring__fg" cx="60" cy="60" r="52"></circle>
+            </svg>
+            <div class="ring__center"><span class="count" data-target="500">0</span><i>+</i></div>
+          </div>
+          <span class="ring__label">Product Lines</span>
+          <span class="ring__desc">Fresh &amp; dry, seasonal year-round</span>
         </div>
-        <div class="stat">
-          <span class="stat__ic">📦</span>
-          <span class="stat__num"><span class="count" data-target="1200">0</span>+</span>
-          <span class="stat__label">Tonnes Handled Monthly</span>
-          <span class="stat__desc">Air &amp; container combined</span>
+
+        <div class="ring-stat reveal" data-pct="80">
+          <div class="ring">
+            <svg viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="ring__bg" cx="60" cy="60" r="52"></circle>
+              <circle class="ring__fg" cx="60" cy="60" r="52"></circle>
+            </svg>
+            <div class="ring__center"><span class="count" data-target="1200">0</span><i>+</i></div>
+          </div>
+          <span class="ring__label">Tonnes / Month</span>
+          <span class="ring__desc">Air &amp; container combined</span>
         </div>
-        <div class="stat">
-          <span class="stat__ic">🤝</span>
-          <span class="stat__num"><span class="count" data-target="300">0</span>+</span>
-          <span class="stat__label">Trade Partners</span>
-          <span class="stat__desc">Retail, HORECA &amp; wholesale</span>
+
+        <div class="ring-stat reveal" data-pct="88">
+          <div class="ring">
+            <svg viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="ring__bg" cx="60" cy="60" r="52"></circle>
+              <circle class="ring__fg" cx="60" cy="60" r="52"></circle>
+            </svg>
+            <div class="ring__center"><span class="count" data-target="300">0</span><i>+</i></div>
+          </div>
+          <span class="ring__label">Trade Partners</span>
+          <span class="ring__desc">Retail, HORECA &amp; wholesale</span>
         </div>
-        <div class="stat">
-          <span class="stat__ic">❄️</span>
-          <span class="stat__num"><span class="count" data-target="24">0</span>/7</span>
-          <span class="stat__label">Cold-Chain Operations</span>
-          <span class="stat__desc">Temperature-controlled, always</span>
+
+        <div class="ring-stat reveal" data-pct="100">
+          <div class="ring">
+            <svg viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="ring__bg" cx="60" cy="60" r="52"></circle>
+              <circle class="ring__fg" cx="60" cy="60" r="52"></circle>
+            </svg>
+            <div class="ring__center"><span class="count" data-target="24">0</span><i>/7</i></div>
+          </div>
+          <span class="ring__label">Cold-Chain Ops</span>
+          <span class="ring__desc">Temperature-controlled, always</span>
         </div>
       </div>
     </div>
@@ -244,7 +301,10 @@
   <section class="section" id="operations">
     <div class="wrap grid-2 grid-2--rev">
       <div class="ops__media reveal">
-        <img src="https://images.unsplash.com/photo-1601599963565-b7ba29c8e3ff?auto=format&fit=crop&w=1000&q=75" alt="Cold storage warehouse operations" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1000&q=75'"/>
+        <img class="opsimg is-active" data-i="0" src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1000&q=75" alt="Cold storage receiving" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1519996529931-28324d5a630e?auto=format&fit=crop&w=1000&q=75'"/>
+        <img class="opsimg" data-i="1" src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1000&q=75" alt="Freight containers" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1519996529931-28324d5a630e?auto=format&fit=crop&w=1000&q=75'"/>
+        <img class="opsimg" data-i="2" src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1000&q=75" alt="Grading and sorting produce" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1519996529931-28324d5a630e?auto=format&fit=crop&w=1000&q=75'"/>
+        <img class="opsimg" data-i="3" src="https://images.unsplash.com/photo-1601599963565-b7ba29c8e3ff?auto=format&fit=crop&w=1000&q=75" alt="Refrigerated distribution" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=1000&q=75'"/>
         <div class="ops__badge">
           <strong>24/7</strong>
           <span>Temperature-controlled operations</span>
@@ -255,32 +315,40 @@
         <h2 class="h2">Precision From <em>Port to Palette</em></h2>
         <p class="lead-p">Every consignment moves through a controlled, purpose-built operation designed
           to protect quality from the moment it lands to the moment it reaches you.</p>
-        <ol class="timeline">
-          <li class="timeline__item reveal">
-            <div class="timeline__body">
+        <div class="stepper" id="opsStepper">
+          <button class="step is-active" data-i="0">
+            <span class="step__no">01</span>
+            <span class="step__txt">
               <strong>Temperature-Controlled Receiving</strong>
               <small>Dedicated chilled zones calibrated per commodity to lock in freshness on arrival.</small>
-            </div>
-          </li>
-          <li class="timeline__item reveal">
-            <div class="timeline__body">
+            </span>
+            <span class="step__bar"><i></i></span>
+          </button>
+          <button class="step" data-i="1">
+            <span class="step__no">02</span>
+            <span class="step__txt">
               <strong>Air &amp; Sea Freight Coordination</strong>
               <small>Priority airport clearance and full-container consolidation through Dubai.</small>
-            </div>
-          </li>
-          <li class="timeline__item reveal">
-            <div class="timeline__body">
+            </span>
+            <span class="step__bar"><i></i></span>
+          </button>
+          <button class="step" data-i="2">
+            <span class="step__no">03</span>
+            <span class="step__txt">
               <strong>Grading, Sorting &amp; Repacking</strong>
               <small>Produce inspected, graded and repacked to each client's exact specification.</small>
-            </div>
-          </li>
-          <li class="timeline__item reveal">
-            <div class="timeline__body">
+            </span>
+            <span class="step__bar"><i></i></span>
+          </button>
+          <button class="step" data-i="3">
+            <span class="step__no">04</span>
+            <span class="step__txt">
               <strong>Last-Mile Refrigerated Distribution</strong>
               <small>Chilled fleet delivering across the UAE and onward for GCC re-export.</small>
-            </div>
-          </li>
-        </ol>
+            </span>
+            <span class="step__bar"><i></i></span>
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -294,7 +362,7 @@
         <p class="section-lead section-lead--light">From farm certification to final inspection, quality is
           engineered into every stage — not checked at the end.</p>
       </div>
-      <div class="quality-grid">
+      <div class="quality-grid spotlight" id="qualityGrid">
         <article class="q-card reveal">
           <span class="q-card__ic">✓</span>
           <h3>Food Safety First</h3>

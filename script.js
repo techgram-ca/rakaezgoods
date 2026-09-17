@@ -229,6 +229,85 @@
   fill("logosRetail", retail);
 })();
 
+/* ----- Purpose accordion (drives the crossfading image) ----- */
+(function () {
+  const acc = document.getElementById("purposeAcc");
+  if (!acc) return;
+  const items = Array.from(acc.querySelectorAll(".acc"));
+  const media = Array.from(document.querySelectorAll(".pmedia"));
+  const badge = document.getElementById("purposeBadge");
+  const open = (idx) => {
+    items.forEach((it, i) => {
+      const on = i === idx;
+      it.classList.toggle("is-active", on);
+      const head = it.querySelector(".acc__head");
+      if (head) head.setAttribute("aria-expanded", String(on));
+    });
+    media.forEach((m) => m.classList.toggle("is-active", +m.dataset.i === idx));
+    if (badge && items[idx].dataset.badge) badge.textContent = items[idx].dataset.badge;
+  };
+  items.forEach((it, i) => {
+    const head = it.querySelector(".acc__head");
+    if (head) head.addEventListener("click", () => open(i));
+  });
+})();
+
+/* ----- Radial progress rings ----- */
+(function () {
+  const stats = Array.from(document.querySelectorAll(".ring-stat"));
+  if (!stats.length) return;
+  const CIRC = 2 * Math.PI * 52; // r = 52
+  const fill = (el) => {
+    const pct = Math.max(0, Math.min(100, +el.dataset.pct || 0));
+    const fg = el.querySelector(".ring__fg");
+    if (fg) fg.style.strokeDashoffset = String(CIRC * (1 - pct / 100));
+  };
+  if (!("IntersectionObserver" in window)) { stats.forEach(fill); return; }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((en) => { if (en.isIntersecting) { fill(en.target); io.unobserve(en.target); } });
+  }, { threshold: 0.4 });
+  stats.forEach((s) => io.observe(s));
+})();
+
+/* ----- Operations stepper (auto-advancing, click to select) ----- */
+(function () {
+  const stepper = document.getElementById("opsStepper");
+  if (!stepper) return;
+  const steps = Array.from(stepper.querySelectorAll(".step"));
+  const imgs = Array.from(document.querySelectorAll(".opsimg"));
+  const DUR = 5000;
+  let idx = 0, timer, started = false;
+  const go = (n) => {
+    idx = (n + steps.length) % steps.length;
+    steps.forEach((s, i) => s.classList.toggle("is-active", i === idx));
+    imgs.forEach((im) => im.classList.toggle("is-active", +im.dataset.i === idx));
+    const bar = steps[idx].querySelector(".step__bar i");
+    if (bar) { bar.style.animation = "none"; void bar.offsetWidth; bar.style.animation = ""; }
+  };
+  const play = () => { clearInterval(timer); timer = setInterval(() => go(idx + 1), DUR); };
+  steps.forEach((s, i) => s.addEventListener("click", () => { go(i); play(); }));
+  stepper.addEventListener("mouseenter", () => clearInterval(timer));
+  stepper.addEventListener("mouseleave", play);
+  const start = () => { if (started) return; started = true; go(0); play(); };
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver((e) => { e.forEach((en) => { if (en.isIntersecting) { start(); io.disconnect(); } }); }, { threshold: 0.3 });
+    io.observe(stepper);
+  } else { start(); }
+})();
+
+/* ----- Quality cursor spotlight ----- */
+(function () {
+  const grid = document.getElementById("qualityGrid");
+  if (!grid || window.matchMedia("(hover: none)").matches) return;
+  grid.querySelectorAll(".q-card").forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty("--mx", ((e.clientX - r.left) / r.width) * 100 + "%");
+      card.style.setProperty("--my", ((e.clientY - r.top) / r.height) * 100 + "%");
+    });
+  });
+})();
+
 /* ----- Contact form -> WhatsApp ----- */
 function sendWhatsApp(e) {
   e.preventDefault();
