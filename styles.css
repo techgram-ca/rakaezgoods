@@ -141,7 +141,7 @@ em { font-style: italic; color: var(--gold); }
 .nav__link--cta:hover { background: var(--gold); color: #2a2110; }
 
 .nav__close { display: none; }
-body.nav-open { overflow: hidden; }
+body.nav-open { position: fixed; left: 0; right: 0; width: 100%; overflow: hidden; }
 .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: 0; cursor: pointer; padding: 8px; z-index: 120; }
 .nav-toggle span { width: 26px; height: 2px; background: var(--cream); border-radius: 3px; transition: .3s var(--ease); }
 .header.scrolled .nav-toggle span { background: var(--ink); }
@@ -540,7 +540,7 @@ body.nav-open { overflow: hidden; }
     transition: border-color .25s var(--ease), color .25s var(--ease);
   }
   .nav__close:hover { border-color: var(--gold); color: var(--gold-soft); }
-  .nav.is-open ~ .nav-toggle { opacity: 0; pointer-events: none; }
+  .nav.is-open ~ .nav-toggle { display: none; }   /* remove header burger while drawer open */
   .nav__link { color: var(--cream); font-size: 1.15rem; }
   .header.scrolled .nav__link { color: var(--cream); }
   .nav__link--cta { color: var(--gold-soft); }
@@ -554,12 +554,12 @@ body.nav-open { overflow: hidden; }
   .hero__content { padding-top: 7rem; }
   .hero__meta { gap: 1.6rem; }
 
-  /* larger, clearer sourcing map on mobile */
-  .map { aspect-ratio: 3 / 2; background-size: 24px 24px; }
-  .node-label { display: none; }             /* names live in the chips below */
-  .hub-label { font-size: 30px; }
-  .node { r: 6.5; }
-  .hub-glow { r: 10; }
+  /* larger, clearer, zoomed-in sourcing map on mobile (viewBox cropped in JS) */
+  .map { aspect-ratio: 3 / 2; background-size: 26px 26px; }
+  .node-label { font-size: 21px; stroke-width: 5px; }
+  .hub-label { font-size: 25px; stroke-width: 5px; }
+  .node { r: 11; }
+  .hub-glow { r: 15; }
   .map-legend { gap: 1.1rem; font-size: .9rem; }
   .countries { grid-template-columns: 1fr; gap: 1.6rem; }
   .countries__group h4 { font-size: 1.2rem; }
