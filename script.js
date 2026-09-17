@@ -252,21 +252,41 @@
   });
 })();
 
-/* ----- Radial progress rings ----- */
+/* ----- KPI progress bars (fill on scroll) ----- */
 (function () {
-  const stats = Array.from(document.querySelectorAll(".ring-stat"));
-  if (!stats.length) return;
-  const CIRC = 2 * Math.PI * 52; // r = 52
+  const kpis = Array.from(document.querySelectorAll(".kpi"));
+  if (!kpis.length) return;
   const fill = (el) => {
     const pct = Math.max(0, Math.min(100, +el.dataset.pct || 0));
-    const fg = el.querySelector(".ring__fg");
-    if (fg) fg.style.strokeDashoffset = String(CIRC * (1 - pct / 100));
+    el.style.setProperty("--fill", pct + "%");
+    el.classList.add("filled");
   };
-  if (!("IntersectionObserver" in window)) { stats.forEach(fill); return; }
+  if (!("IntersectionObserver" in window)) { kpis.forEach(fill); return; }
   const io = new IntersectionObserver((entries) => {
     entries.forEach((en) => { if (en.isIntersecting) { fill(en.target); io.unobserve(en.target); } });
-  }, { threshold: 0.4 });
-  stats.forEach((s) => io.observe(s));
+  }, { threshold: 0.35 });
+  kpis.forEach((k) => io.observe(k));
+})();
+
+/* ----- Who We Are: feature selector drives image + caption ----- */
+(function () {
+  const wrap = document.getElementById("aboutFeatures");
+  if (!wrap) return;
+  const feats = Array.from(wrap.querySelectorAll(".feature"));
+  const imgs = Array.from(document.querySelectorAll(".amedia"));
+  const tagNum = document.getElementById("aboutTagNum");
+  const tagTxt = document.getElementById("aboutTagTxt");
+  const sel = (i) => {
+    feats.forEach((f, k) => f.classList.toggle("is-active", k === i));
+    imgs.forEach((im) => im.classList.toggle("is-active", +im.dataset.i === i));
+    const f = feats[i];
+    if (tagNum) tagNum.textContent = f.dataset.title || "";
+    if (tagTxt) tagTxt.textContent = f.dataset.sub || "";
+  };
+  feats.forEach((f, i) => {
+    f.addEventListener("click", () => sel(i));
+    f.addEventListener("mouseenter", () => sel(i));
+  });
 })();
 
 /* ----- Operations stepper (auto-advancing, click to select) ----- */
@@ -295,15 +315,16 @@
   } else { start(); }
 })();
 
-/* ----- Quality cursor spotlight ----- */
+/* ----- Cursor spotlight (Quality, KPIs, Segments) ----- */
 (function () {
-  const grid = document.getElementById("qualityGrid");
-  if (!grid || window.matchMedia("(hover: none)").matches) return;
-  grid.querySelectorAll(".q-card").forEach((card) => {
-    card.addEventListener("mousemove", (e) => {
-      const r = card.getBoundingClientRect();
-      card.style.setProperty("--mx", ((e.clientX - r.left) / r.width) * 100 + "%");
-      card.style.setProperty("--my", ((e.clientY - r.top) / r.height) * 100 + "%");
+  if (window.matchMedia("(hover: none)").matches) return;
+  document.querySelectorAll(".spotlight").forEach((grid) => {
+    Array.from(grid.children).forEach((card) => {
+      card.addEventListener("mousemove", (e) => {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty("--mx", ((e.clientX - r.left) / r.width) * 100 + "%");
+        card.style.setProperty("--my", ((e.clientY - r.top) / r.height) * 100 + "%");
+      });
     });
   });
 })();
