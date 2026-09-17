@@ -443,8 +443,7 @@ em { font-style: italic; color: var(--gold); }
   letter-spacing: .04em; margin-bottom: 1rem; transition: transform .45s var(--ease), border-color .45s var(--ease);
 }
 .segment:hover .segment__ic { transform: translateY(-4px); border-color: var(--gold); }
-.segment__ic--stars { font-family: var(--serif); font-weight: 600; font-size: 1.35rem; color: var(--ink); gap: 1px; }
-.segment__ic--stars em { color: var(--gold); font-style: normal; font-size: .9em; }
+.segment__ic--star { color: var(--gold); font-size: 1.5rem; line-height: 1; }
 .segment h3 { font-family: var(--serif); font-weight: 500; color: var(--ink); font-size: 1.16rem; margin-bottom: .5rem; }
 .segment p { font-size: .9rem; color: var(--muted); }
 
