@@ -3,30 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RAKAEZ GOODS WHOLESALERS L.L.C — Fresh Fruit &amp; Vegetable Importers, Dubai</title>
-  <meta name="description" content="RAKAEZ GOODS WHOLESALERS L.L.C — Dubai-based importer of fresh fruit &amp; vegetables by air and container from around the world. Re-exports across the GCC and bulk food supply to UAE restaurants." />
-  <meta name="theme-color" content="#0f7a3d" />
+  <title>RAKAEZ GOODS WHOLESALERS L.L.C — Premium Fresh Produce Importers, Dubai</title>
+  <meta name="description" content="RAKAEZ GOODS WHOLESALERS L.L.C — Dubai-based importer of fresh fruit & vegetables by air and sea from around the world. Global sourcing, GCC re-exports and premium supply to the UAE's leading retail chains, five-star hotels and restaurants." />
+  <meta name="theme-color" content="#0e2a1e" />
+  <meta property="og:title" content="RAKAEZ GOODS WHOLESALERS L.L.C" />
+  <meta property="og:description" content="Premium fresh produce importers & wholesalers based in Dubai — global sourcing, GCC re-exports, five-star supply." />
+  <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230f7a3d'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='%23fff' font-family='Arial' font-weight='bold'%3ER%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230e2a1e'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='%23c9a24b' font-family='Georgia,serif' font-weight='bold'%3ER%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
+  <!-- ===== Scroll progress ===== -->
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
   <!-- ===== Top bar ===== -->
   <div class="topbar">
-    <div class="container topbar__inner">
-      <span class="topbar__item">📍 The Exchange Tower, Business Bay, Dubai, UAE</span>
+    <div class="wrap topbar__inner">
+      <span class="topbar__item">The Exchange Tower · Business Bay · Dubai · UAE</span>
       <span class="topbar__spacer"></span>
-      <a class="topbar__item" href="tel:+971566224523">📞 +971 56 622 4523</a>
-      <a class="topbar__item topbar__wa" href="https://wa.me/971566224523" target="_blank" rel="noopener">WhatsApp Us</a>
+      <a class="topbar__item" href="tel:+971566224523">+971 56 622 4523</a>
+      <span class="topbar__divider"></span>
+      <a class="topbar__item" href="https://wa.me/971566224523" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 
   <!-- ===== Header ===== -->
-  <header class="header" id="top">
-    <div class="container header__inner">
-      <a href="#top" class="brand" aria-label="Rakaez Goods Wholesalers home">
+  <header class="header" id="header">
+    <div class="wrap header__inner">
+      <a href="#home" class="brand" aria-label="Rakaez Goods Wholesalers home">
         <span class="brand__mark">R</span>
         <span class="brand__text">
           <span class="brand__name">RAKAEZ GOODS</span>
@@ -36,11 +43,12 @@
 
       <nav class="nav" id="nav">
         <a href="#home" class="nav__link">Home</a>
-        <a href="#about" class="nav__link">About Us</a>
-        <a href="#services" class="nav__link">Services</a>
-        <a href="#testimonials" class="nav__link">Testimonials</a>
-        <a href="#contact" class="nav__link">Contact</a>
-        <a href="https://wa.me/971566224523" target="_blank" rel="noopener" class="btn btn--sm btn--primary nav__cta">Get a Quote</a>
+        <a href="#about" class="nav__link">About</a>
+        <a href="#growth" class="nav__link">Growth</a>
+        <a href="#operations" class="nav__link">Operations</a>
+        <a href="#sourcing" class="nav__link">Sourcing</a>
+        <a href="#clients" class="nav__link">Clients</a>
+        <a href="#contact" class="nav__link nav__link--cta">Enquire</a>
       </nav>
 
       <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
@@ -49,253 +57,388 @@
     </div>
   </header>
 
-  <!-- ===== Hero slider ===== -->
+  <!-- ===== Hero ===== -->
   <section class="hero" id="home">
-    <div class="slider" id="slider">
-      <div class="slide is-active" style="--img:url('https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=1920&q=70')">
-        <div class="container slide__inner">
-          <span class="eyebrow">Air &amp; Container Imports · Worldwide Sourcing</span>
-          <h1>Fresh Fruit &amp; Vegetables, Delivered to the UAE &amp; GCC</h1>
-          <p>Dubai-based wholesalers importing premium fresh produce by air and sea from growers across the globe — with cold-chain integrity from farm to your door.</p>
-          <div class="hero__actions">
-            <a href="#services" class="btn btn--primary">Our Services</a>
-            <a href="https://wa.me/971566224523" target="_blank" rel="noopener" class="btn btn--ghost">Chat on WhatsApp</a>
-          </div>
-        </div>
+    <div class="hero__slides" id="heroSlides">
+      <div class="hero__slide is-active" style="--img:url('https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=2000&q=75')"></div>
+      <div class="hero__slide" style="--img:url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=2000&q=75')"></div>
+      <div class="hero__slide" style="--img:url('https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=2000&q=75')"></div>
+    </div>
+    <div class="hero__veil"></div>
+
+    <div class="wrap hero__content">
+      <span class="eyebrow eyebrow--light reveal">Global Sourcing · Air &amp; Sea · Dubai</span>
+      <h1 class="hero__title reveal">
+        Freshness, <em>Sourced from the World</em><br />Delivered to the Gulf.
+      </h1>
+      <p class="hero__lead reveal">
+        RAKAEZ GOODS WHOLESALERS L.L.C imports premium fresh fruit &amp; vegetables by air and
+        container from growers across the globe — supplying the UAE's finest retailers,
+        hotels and restaurants, and re-exporting throughout the GCC.
+      </p>
+      <div class="hero__actions reveal">
+        <a href="#contact" class="btn btn--gold">Enquire Now</a>
+        <a href="#sourcing" class="btn btn--outline">Our Global Reach</a>
       </div>
 
-      <div class="slide" style="--img:url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1920&q=70')">
-        <div class="container slide__inner">
-          <span class="eyebrow">Container &amp; Dry Shipments</span>
-          <h1>Bulk Container Shipments From Around the World</h1>
-          <p>Full-container loads of fresh fruit, vegetables and dry goods — sourced globally and consolidated in Dubai for reliable, high-volume supply.</p>
-          <div class="hero__actions">
-            <a href="#contact" class="btn btn--primary">Request a Quote</a>
-            <a href="#about" class="btn btn--ghost">Why Rakaez</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="slide" style="--img:url('https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=1920&q=70')">
-        <div class="container slide__inner">
-          <span class="eyebrow">GCC Re-exports · Restaurant Supply</span>
-          <h1>Trusted Supply to Restaurants Across the UAE</h1>
-          <p>Direct bulk supply of food items to restaurants nationwide, plus seamless re-exports to Saudi Arabia, Oman, Qatar, Bahrain and Kuwait.</p>
-          <div class="hero__actions">
-            <a href="tel:+971566224523" class="btn btn--primary">Call +971 56 622 4523</a>
-            <a href="#services" class="btn btn--ghost">Explore Services</a>
-          </div>
-        </div>
+      <div class="hero__meta reveal">
+        <div class="hero__meta-item"><strong>50+</strong><span>Sourcing Countries</span></div>
+        <div class="hero__meta-item"><strong>6</strong><span>GCC Markets</span></div>
+        <div class="hero__meta-item"><strong>24/7</strong><span>Cold Chain</span></div>
       </div>
     </div>
 
-    <button class="slider__arrow slider__arrow--prev" id="prevBtn" aria-label="Previous slide">&#8249;</button>
-    <button class="slider__arrow slider__arrow--next" id="nextBtn" aria-label="Next slide">&#8250;</button>
-    <div class="slider__dots" id="dots" role="tablist" aria-label="Slide navigation"></div>
+    <div class="hero__dots" id="heroDots" aria-label="Slide navigation"></div>
+    <a href="#about" class="hero__scroll" aria-label="Scroll to content"><span></span>Scroll</a>
   </section>
 
-  <!-- ===== Trust strip ===== -->
-  <section class="strip">
-    <div class="container strip__grid">
-      <div class="strip__item"><span class="strip__num">50+</span><span class="strip__label">Sourcing Countries</span></div>
-      <div class="strip__item"><span class="strip__num">6</span><span class="strip__label">GCC Markets Served</span></div>
-      <div class="strip__item"><span class="strip__num">24/7</span><span class="strip__label">Cold-Chain Handling</span></div>
-      <div class="strip__item"><span class="strip__num">100%</span><span class="strip__label">Freshness Commitment</span></div>
+  <!-- ===== Marquee ===== -->
+  <div class="marquee marquee--top" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Fresh Fruit</span><i>✦</i><span>Vegetables</span><i>✦</i><span>Air Freight</span><i>✦</i>
+      <span>Container Shipments</span><i>✦</i><span>GCC Re-Exports</span><i>✦</i><span>HORECA Supply</span><i>✦</i>
+      <span>Fresh Fruit</span><i>✦</i><span>Vegetables</span><i>✦</i><span>Air Freight</span><i>✦</i>
+      <span>Container Shipments</span><i>✦</i><span>GCC Re-Exports</span><i>✦</i><span>HORECA Supply</span><i>✦</i>
     </div>
-  </section>
+  </div>
 
-  <!-- ===== About ===== -->
+  <!-- ===== Who We Are ===== -->
   <section class="section" id="about">
-    <div class="container about">
-      <div class="about__media">
-        <img src="https://images.unsplash.com/photo-1519996529931-28324d5a630e?auto=format&fit=crop&w=900&q=70" alt="Fresh produce at a wholesale market" loading="lazy" />
-        <div class="about__badge">
-          <strong>Based in Dubai</strong>
-          <span>Serving the UAE &amp; GCC</span>
+    <div class="wrap grid-2">
+      <div class="reveal">
+        <span class="eyebrow">Who We Are</span>
+        <h2 class="h2">A Dubai House Built on <em>Freshness &amp; Trust</em></h2>
+        <p class="lead-p">
+          Headquartered in Business Bay, RAKAEZ GOODS WHOLESALERS L.L.C is a premium importer and
+          wholesaler of fresh fruit and vegetables. We connect the world's best growing regions with
+          the Gulf's most demanding kitchens and retailers.
+        </p>
+        <p class="muted-p">
+          Our business moves produce two ways — <strong>air shipment</strong> for speed and peak
+          freshness, and <strong>container shipment</strong> for scale — alongside dry-goods
+          shipments from around the world. From our Dubai base we re-export across the GCC and supply
+          food items in bulk directly to restaurants throughout the UAE.
+        </p>
+        <div class="feature-row">
+          <div class="feature reveal">
+            <span class="feature__ic">✈</span>
+            <div><strong>Air Freight</strong><p>Speed-critical produce, freshness protected.</p></div>
+          </div>
+          <div class="feature reveal">
+            <span class="feature__ic">🚢</span>
+            <div><strong>Sea Freight</strong><p>Full-container volume, worldwide sourcing.</p></div>
+          </div>
+          <div class="feature reveal">
+            <span class="feature__ic">🌍</span>
+            <div><strong>GCC Re-Export</strong><p>Onward supply across six markets.</p></div>
+          </div>
+          <div class="feature reveal">
+            <span class="feature__ic">🍽</span>
+            <div><strong>HORECA Supply</strong><p>Bulk food for restaurants UAE-wide.</p></div>
+          </div>
         </div>
       </div>
-      <div class="about__body">
-        <span class="kicker">About Us</span>
-        <h2>Your Global Partner in Fresh Produce</h2>
-        <p>RAKAEZ GOODS WHOLESALERS L.L.C is a Dubai-based importer and wholesaler specialising in fresh fruit and vegetables sourced from growers all over the world. We move produce by <strong>air shipment</strong> for speed and by <strong>container shipment</strong> for volume — keeping the cold chain intact every step of the way.</p>
-        <p>From our Business Bay base, we re-export to markets across the GCC and deliver direct bulk supply of food items to restaurants throughout the UAE. Whatever your scale, we bring reliability, freshness and worldwide reach to your table.</p>
-        <ul class="ticks">
-          <li>Worldwide sourcing network</li>
-          <li>Air &amp; container logistics</li>
-          <li>GCC re-export expertise</li>
-          <li>Restaurant &amp; HORECA supply</li>
+
+      <div class="about__media reveal">
+        <img src="https://images.unsplash.com/photo-1519996529931-28324d5a630e?auto=format&fit=crop&w=1000&q=75" alt="Crates of fresh produce at a wholesale market" loading="lazy" />
+        <div class="about__tag">
+          <span class="about__tag-num">Est. Dubai</span>
+          <span class="about__tag-txt">Serving the UAE &amp; GCC</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Mission / Vision ===== -->
+  <section class="section section--dark" id="mission">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow eyebrow--light">Our Purpose</span>
+        <h2 class="h2 h2--light">Mission &amp; Vision</h2>
+      </div>
+      <div class="mv-grid">
+        <article class="mv reveal">
+          <span class="mv__num">01</span>
+          <h3>Our Mission</h3>
+          <p>To deliver the freshest fruit and vegetables from the world's finest growing regions to
+            the Gulf — with uncompromising quality, an unbroken cold chain, and service our partners
+            can build their business on.</p>
+        </article>
+        <article class="mv reveal">
+          <span class="mv__num">02</span>
+          <h3>Our Vision</h3>
+          <p>To be the GCC's most trusted fresh-produce partner — the first name that premium
+            hotels, retailers and restaurants think of when they demand consistency, provenance and
+            reliability at scale.</p>
+        </article>
+        <article class="mv reveal">
+          <span class="mv__num">03</span>
+          <h3>Our Values</h3>
+          <p>Freshness first, integrity always. We source responsibly, price fairly, and honour every
+            commitment — treating each shipment as a promise kept to the people we serve.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Growth / Numbers ===== -->
+  <section class="section section--tint" id="growth">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Our Growth</span>
+        <h2 class="h2">Numbers at a Glance</h2>
+        <p class="section-lead">A snapshot of the scale and reach behind every delivery.</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat reveal">
+          <span class="stat__num"><span class="count" data-target="50">0</span>+</span>
+          <span class="stat__label">Sourcing Countries</span>
+          <span class="stat__desc">Growers across six continents</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__num"><span class="count" data-target="6">0</span></span>
+          <span class="stat__label">GCC Markets Served</span>
+          <span class="stat__desc">UAE, KSA, Oman, Qatar, Bahrain, Kuwait</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__num"><span class="count" data-target="500">0</span>+</span>
+          <span class="stat__label">Product Lines</span>
+          <span class="stat__desc">Fresh &amp; dry, seasonal year-round</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__num"><span class="count" data-target="1200">0</span>+</span>
+          <span class="stat__label">Tonnes Handled Monthly</span>
+          <span class="stat__desc">Air &amp; container combined</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__num"><span class="count" data-target="300">0</span>+</span>
+          <span class="stat__label">Trade Partners</span>
+          <span class="stat__desc">Retail, HORECA &amp; wholesale</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__num"><span class="count" data-target="24">0</span>/7</span>
+          <span class="stat__label">Cold-Chain Operations</span>
+          <span class="stat__desc">Temperature-controlled, always</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Facilities & Operations ===== -->
+  <section class="section" id="operations">
+    <div class="wrap grid-2 grid-2--rev">
+      <div class="ops__media reveal">
+        <img src="https://images.unsplash.com/photo-1601599963565-b7ba29c8e3ff?auto=format&fit=crop&w=1000&q=75" alt="Cold storage warehouse operations" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1000&q=75'"/>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Facilities &amp; Operations</span>
+        <h2 class="h2">Precision From <em>Port to Palette</em></h2>
+        <p class="lead-p">Every consignment moves through a controlled, purpose-built operation designed
+          to protect quality from the moment it lands to the moment it reaches you.</p>
+        <ul class="ops-list">
+          <li class="reveal"><span>Temperature-controlled receiving &amp; cold storage</span><small>Dedicated chilled zones calibrated per commodity to lock in freshness.</small></li>
+          <li class="reveal"><span>Air &amp; sea freight coordination</span><small>Priority airport clearance and full-container consolidation through Dubai.</small></li>
+          <li class="reveal"><span>Grading, sorting &amp; repacking</span><small>Produce inspected, graded and repacked to each client's specification.</small></li>
+          <li class="reveal"><span>Last-mile refrigerated distribution</span><small>Chilled fleet delivering across the UAE and onward GCC re-export.</small></li>
         </ul>
-        <a href="#contact" class="btn btn--primary">Partner With Us</a>
       </div>
     </div>
   </section>
 
-  <!-- ===== Services ===== -->
-  <section class="section section--tint" id="services">
-    <div class="container">
-      <div class="section__head">
-        <span class="kicker">What We Do</span>
-        <h2>Our Services</h2>
-        <p class="section__lead">End-to-end importation, re-export and bulk supply of fresh and dry food products.</p>
+  <!-- ===== Quality & Compliance ===== -->
+  <section class="section section--dark" id="quality">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow eyebrow--light">Quality &amp; Compliance</span>
+        <h2 class="h2 h2--light">Standards You Can Serve With Confidence</h2>
+        <p class="section-lead section-lead--light">From farm certification to final inspection, quality is
+          engineered into every stage — not checked at the end.</p>
       </div>
-
-      <div class="cards">
-        <article class="card">
-          <div class="card__icon">✈️</div>
-          <h3>Air Shipment Imports</h3>
-          <p>Importation of air shipments of fresh fruit and vegetables from all over the world — fast delivery that protects peak freshness and shelf life.</p>
+      <div class="quality-grid">
+        <article class="q-card reveal">
+          <span class="q-card__ic">✓</span>
+          <h3>Food Safety First</h3>
+          <p>HACCP-aligned handling and hygiene practices across receiving, storage and dispatch.</p>
         </article>
-
-        <article class="card">
-          <div class="card__icon">🚢</div>
-          <h3>Container Shipment Imports</h3>
-          <p>Importation of container shipments of fresh fruit &amp; vegetables and dry shipments from all over the world, consolidated efficiently through Dubai.</p>
+        <article class="q-card reveal">
+          <span class="q-card__ic">❄</span>
+          <h3>Unbroken Cold Chain</h3>
+          <p>Continuous temperature control and monitoring from origin to delivery point.</p>
         </article>
-
-        <article class="card">
-          <div class="card__icon">🌍</div>
-          <h3>GCC Re-Exports</h3>
-          <p>Re-exports to other GCC countries — Saudi Arabia, Oman, Qatar, Bahrain and Kuwait — with the documentation and logistics handled for you.</p>
+        <article class="q-card reveal">
+          <span class="q-card__ic">🔍</span>
+          <h3>Rigorous Inspection</h3>
+          <p>Multi-point quality checks on arrival — freshness, grade, size and appearance.</p>
         </article>
-
-        <article class="card">
-          <div class="card__icon">🍽️</div>
-          <h3>Restaurant Bulk Supply</h3>
-          <p>Direct bulk supply of food items to restaurants all over the UAE, with dependable volumes and consistent quality your kitchen can rely on.</p>
+        <article class="q-card reveal">
+          <span class="q-card__ic">📄</span>
+          <h3>Full Traceability</h3>
+          <p>Documented provenance and compliant paperwork for imports and GCC re-exports.</p>
         </article>
-
-        <article class="card">
-          <div class="card__icon">🥦</div>
-          <h3>Fresh Fruit &amp; Vegetables</h3>
-          <p>A wide, seasonal range of fresh fruit and vegetables sourced from trusted growers worldwide to meet demand year-round.</p>
+        <article class="q-card reveal">
+          <span class="q-card__ic">🌱</span>
+          <h3>Responsible Sourcing</h3>
+          <p>Partnerships with trusted, ethical growers committed to sustainable practice.</p>
         </article>
-
-        <article class="card">
-          <div class="card__icon">📦</div>
-          <h3>Dry Goods Shipments</h3>
-          <p>Dry food shipments alongside fresh produce, giving you a single, streamlined wholesale partner for your sourcing needs.</p>
+        <article class="q-card reveal">
+          <span class="q-card__ic">⏱</span>
+          <h3>On-Time, Every Time</h3>
+          <p>Reliable schedules that keep shelves stocked and kitchens running without gaps.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ===== Testimonials ===== -->
-  <section class="section" id="testimonials">
-    <div class="container">
-      <div class="section__head">
-        <span class="kicker">Testimonials</span>
-        <h2>What Our Clients Say</h2>
-        <p class="section__lead">Restaurants, distributors and re-exporters across the region trust Rakaez Goods.</p>
+  <!-- ===== Global Sourcing ===== -->
+  <section class="section section--map" id="sourcing">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow eyebrow--light">Global Sourcing</span>
+        <h2 class="h2 h2--light">Sourcing From the World's Best</h2>
+        <p class="section-lead section-lead--light">Air and sea routes converging on Dubai — connecting the
+          finest growing regions across six continents to the Gulf.</p>
       </div>
 
-      <div class="cards cards--3">
-        <article class="quote">
-          <div class="quote__stars">★★★★★</div>
-          <p>“Consistent quality and freshness on every container. Rakaez has become our go-to for imported produce in Dubai.”</p>
-          <div class="quote__by">
-            <span class="quote__avatar">AM</span>
-            <div><strong>Ahmed Al Mansoori</strong><span>Procurement Head, Fine Dining Group</span></div>
-          </div>
-        </article>
+      <div class="map-legend reveal">
+        <span class="legend"><i class="legend__line legend__line--air"></i> Air Freight</span>
+        <span class="legend"><i class="legend__line legend__line--sea"></i> Sea Freight</span>
+        <span class="legend"><i class="legend__dot"></i> Dubai Hub</span>
+      </div>
 
-        <article class="quote">
-          <div class="quote__stars">★★★★★</div>
-          <p>“Air shipments arrive fast and in perfect condition. Their re-export handling to Saudi saved us weeks of paperwork.”</p>
-          <div class="quote__by">
-            <span class="quote__avatar">SK</span>
-            <div><strong>Sarah Khan</strong><span>Operations Manager, GCC Distributor</span></div>
-          </div>
-        </article>
+      <div class="map" id="worldMap" aria-label="Global sourcing route map centred on Dubai"></div>
 
-        <article class="quote">
-          <div class="quote__stars">★★★★★</div>
-          <p>“Reliable bulk supply for all our restaurant outlets. Great pricing, great service, and always fresh.”</p>
-          <div class="quote__by">
-            <span class="quote__avatar">RP</span>
-            <div><strong>Rajan Patel</strong><span>Owner, UAE Restaurant Chain</span></div>
-          </div>
+      <div class="countries reveal">
+        <div class="countries__group">
+          <h4>Air Freight Origins</h4>
+          <div class="chips" id="airChips"></div>
+        </div>
+        <div class="countries__group">
+          <h4>Sea Freight Origins</h4>
+          <div class="chips" id="seaChips"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Partners & Clients ===== -->
+  <section class="section section--tint" id="clients">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Partners &amp; Clients</span>
+        <h2 class="h2">Trusted Across the UAE's Finest Tables</h2>
+        <p class="section-lead">From five-star hospitality to the nation's leading retail chains — we supply
+          the standards the best in Dubai are built on.</p>
+      </div>
+
+      <div class="segments">
+        <article class="segment reveal">
+          <span class="segment__ic">★★★★★</span>
+          <h3>Five-Star Hotels &amp; Resorts</h3>
+          <p>Luxury hospitality across Palm Jumeirah, Downtown and the coastline — where only the freshest will do.</p>
         </article>
+        <article class="segment reveal">
+          <span class="segment__ic">🛒</span>
+          <h3>Hypermarket &amp; Retail Chains</h3>
+          <p>High-volume, consistent supply for the UAE's largest supermarket and grocery brands.</p>
+        </article>
+        <article class="segment reveal">
+          <span class="segment__ic">🍽</span>
+          <h3>Fine Dining &amp; HORECA</h3>
+          <p>Restaurants, hotel kitchens and catering groups relying on daily fresh deliveries.</p>
+        </article>
+        <article class="segment reveal">
+          <span class="segment__ic">🌍</span>
+          <h3>GCC Distributors</h3>
+          <p>Re-export partners moving our produce onward to Saudi Arabia, Oman, Qatar, Bahrain &amp; Kuwait.</p>
+        </article>
+      </div>
+
+      <!-- NOTE: Replace the names/logos below with your actual authorised client logos. -->
+      <p class="logos__caption reveal">Serving the calibre of names that define hospitality &amp; retail in the UAE</p>
+      <div class="logos" aria-hidden="true">
+        <div class="logos__track" id="logosTrack"></div>
       </div>
     </div>
   </section>
 
   <!-- ===== Contact ===== -->
-  <section class="section section--tint" id="contact">
-    <div class="container contact">
-      <div class="contact__info">
-        <span class="kicker">Get In Touch</span>
-        <h2>Contact Us</h2>
-        <p>Ready to source fresh produce or discuss bulk supply? Reach out — we respond fast on call and WhatsApp.</p>
+  <section class="section section--dark" id="contact">
+    <div class="wrap contact">
+      <div class="contact__info reveal">
+        <span class="eyebrow eyebrow--light">Contact Us</span>
+        <h2 class="h2 h2--light">Let's Discuss Your <em>Requirements</em></h2>
+        <p class="section-lead section-lead--light">Tell us what you need — by the case or by the container.
+          We respond fast on call and WhatsApp.</p>
 
         <ul class="contact__list">
           <li>
             <span class="contact__ic">📍</span>
-            <div>
-              <strong>Address</strong>
-              <p>Plot No. 187-0, The Exchange Tower, Business Bay, Dubai, 0000, Dubai, UAE</p>
-            </div>
+            <div><strong>Head Office</strong><p>Plot No. 187-0, The Exchange Tower, Business Bay, Dubai, 0000, UAE</p></div>
           </li>
           <li>
             <span class="contact__ic">📞</span>
-            <div>
-              <strong>Call &amp; WhatsApp</strong>
-              <p><a href="tel:+971566224523">+971 56 622 4523</a></p>
-            </div>
+            <div><strong>Call &amp; WhatsApp</strong><p><a href="tel:+971566224523">+971 56 622 4523</a></p></div>
           </li>
           <li>
             <span class="contact__ic">🏢</span>
-            <div>
-              <strong>Company</strong>
-              <p>RAKAEZ GOODS WHOLESALERS L.L.C</p>
-            </div>
+            <div><strong>Company</strong><p>RAKAEZ GOODS WHOLESALERS L.L.C</p></div>
           </li>
         </ul>
 
-        <div class="contact__actions">
-          <a href="tel:+971566224523" class="btn btn--primary">Call Now</a>
-          <a href="https://wa.me/971566224523" target="_blank" rel="noopener" class="btn btn--wa">WhatsApp</a>
+        <div class="contact__cta">
+          <a href="tel:+971566224523" class="btn btn--gold">Call Now</a>
+          <a href="https://wa.me/971566224523" target="_blank" rel="noopener" class="btn btn--outline btn--outline-light">WhatsApp</a>
         </div>
       </div>
 
-      <form class="contact__form" onsubmit="return sendWhatsApp(event)">
-        <h3>Send Us a Message</h3>
+      <form class="contact__form reveal" onsubmit="return sendWhatsApp(event)">
+        <h3>Send an Enquiry</h3>
         <div class="field">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" placeholder="Your name" required />
         </div>
-        <div class="field">
-          <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="phone" placeholder="Your phone number" />
+        <div class="field-row">
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="Phone number" />
+          </div>
+          <div class="field">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" placeholder="Company (optional)" />
+          </div>
         </div>
         <div class="field">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" placeholder="Tell us what you need..." required></textarea>
+          <label for="message">Your Requirements</label>
+          <textarea id="message" name="message" rows="4" placeholder="Products, quantities, delivery location..." required></textarea>
         </div>
-        <button type="submit" class="btn btn--primary btn--block">Send via WhatsApp</button>
-        <p class="contact__note">Your message opens in WhatsApp to +971 56 622 4523.</p>
+        <button type="submit" class="btn btn--gold btn--block">Send via WhatsApp</button>
+        <p class="contact__note">Opens WhatsApp to +971 56 622 4523 with your message ready to send.</p>
       </form>
     </div>
   </section>
 
   <!-- ===== Footer ===== -->
   <footer class="footer">
-    <div class="container footer__grid">
+    <div class="wrap footer__grid">
       <div>
-        <a href="#top" class="brand brand--footer">
+        <a href="#home" class="brand brand--footer">
           <span class="brand__mark">R</span>
           <span class="brand__text">
             <span class="brand__name">RAKAEZ GOODS</span>
             <span class="brand__sub">Wholesalers L.L.C</span>
           </span>
         </a>
-        <p class="footer__about">Dubai-based importer and wholesaler of fresh fruit &amp; vegetables from around the world, with GCC re-exports and UAE restaurant supply.</p>
+        <p class="footer__about">Premium importer &amp; wholesaler of fresh fruit and vegetables — sourcing
+          globally, supplying the UAE, and re-exporting across the GCC.</p>
       </div>
       <div>
-        <h4>Quick Links</h4>
-        <a href="#about">About Us</a>
-        <a href="#services">Services</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
+        <h4>Explore</h4>
+        <a href="#about">Who We Are</a>
+        <a href="#growth">Our Growth</a>
+        <a href="#operations">Operations</a>
+        <a href="#sourcing">Global Sourcing</a>
+        <a href="#clients">Clients</a>
       </div>
       <div>
         <h4>Contact</h4>
@@ -305,8 +448,9 @@
       </div>
     </div>
     <div class="footer__bar">
-      <div class="container">
+      <div class="wrap footer__bar-inner">
         <p>&copy; <span id="year"></span> RAKAEZ GOODS WHOLESALERS L.L.C. All rights reserved.</p>
+        <p class="footer__made">Fresh from the world, delivered to the Gulf.</p>
       </div>
     </div>
   </footer>

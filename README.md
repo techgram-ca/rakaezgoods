@@ -12,11 +12,24 @@ importer and wholesaler of fresh fruit &amp; vegetables.
   to restaurants across the UAE.
 
 ## Sections
-Hero slider (3 slides), About Us, Services, Testimonials, Contact — plus a
-sticky header, mobile menu, floating WhatsApp button and footer.
+Premium single-page layout with: cinematic hero slider (Ken Burns crossfade),
+Who We Are, Mission & Vision, Our Growth (animated stat counters), Facilities &
+Operations, Quality & Compliance, Global Sourcing (animated air/sea route map +
+country list), Partners & Clients (segments + logo marquee), and Contact — plus
+a sticky header with scroll progress bar, mobile drawer menu, floating WhatsApp
+button, scroll-reveal animations, and footer.
 
 ## Tech
 Plain static **HTML + CSS + JavaScript** — no build step or dependencies.
+Fonts: Fraunces (serif display) + Inter (UI), loaded from Google Fonts.
+
+## Customisation notes
+- **Client logos:** the marquee in the Partners & Clients section uses
+  placeholder names. Replace them (in `script.js`, `logosTrack`) with your
+  actual authorised client logos/names.
+- **Images:** hero and section images load from Unsplash. Swap the URLs in
+  `index.html` for your own brand photography for production.
+- **Sourcing map:** origins are defined in the `origins` array in `script.js`.
 
 ## Run locally
 Just open `index.html` in a browser, or serve the folder:
