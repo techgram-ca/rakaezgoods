@@ -50,14 +50,18 @@
 (function () {
   const toggle = document.getElementById("navToggle");
   const nav = document.getElementById("nav");
+  const closeBtn = document.getElementById("navClose");
   if (!toggle || !nav) return;
-  const close = () => { nav.classList.remove("is-open"); toggle.classList.remove("is-open"); toggle.setAttribute("aria-expanded", "false"); };
-  toggle.addEventListener("click", () => {
-    const open = nav.classList.toggle("is-open");
+  const setOpen = (open) => {
+    nav.classList.toggle("is-open", open);
     toggle.classList.toggle("is-open", open);
     toggle.setAttribute("aria-expanded", String(open));
-  });
-  nav.querySelectorAll("a").forEach((a) => a.addEventListener("click", close));
+    document.body.classList.toggle("nav-open", open); // lock background scroll
+  };
+  toggle.addEventListener("click", () => setOpen(!nav.classList.contains("is-open")));
+  if (closeBtn) closeBtn.addEventListener("click", () => setOpen(false));
+  nav.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setOpen(false)));
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") setOpen(false); });
 })();
 
 /* ----- Reveal on scroll ----- */
