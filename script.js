@@ -100,21 +100,21 @@
   const W = 1000, H = 500;
   const HUB = { x: 655, y: 182 }; // Dubai (equirectangular approx)
 
-  // name, flag, x, y, mode
+  // name, ISO code (for flag image), x, y, mode
   const origins = [
-    { n: "Netherlands", f: "🇳🇱", x: 515, y: 108, m: "air" },
-    { n: "Spain",       f: "🇪🇸", x: 490, y: 140, m: "sea" },
-    { n: "Turkey",      f: "🇹🇷", x: 597, y: 146, m: "sea" },
-    { n: "Egypt",       f: "🇪🇬", x: 585, y: 178, m: "air" },
-    { n: "Kenya",       f: "🇰🇪", x: 606, y: 250, m: "air" },
-    { n: "South Africa",f: "🇿🇦", x: 567, y: 332, m: "sea" },
-    { n: "India",       f: "🇮🇳", x: 716, y: 196, m: "air" },
-    { n: "Thailand",    f: "🇹🇭", x: 778, y: 210, m: "air" },
-    { n: "China",       f: "🇨🇳", x: 792, y: 156, m: "sea" },
-    { n: "Peru",        f: "🇵🇪", x: 292, y: 280, m: "air" },
-    { n: "Chile",       f: "🇨🇱", x: 305, y: 344, m: "sea" },
-    { n: "USA",         f: "🇺🇸", x: 232, y: 150, m: "sea" },
-    { n: "Australia",   f: "🇦🇺", x: 865, y: 320, m: "sea" },
+    { n: "Netherlands", c: "nl", x: 515, y: 108, m: "air" },
+    { n: "Spain",       c: "es", x: 490, y: 140, m: "sea" },
+    { n: "Turkey",      c: "tr", x: 597, y: 146, m: "sea" },
+    { n: "Egypt",       c: "eg", x: 585, y: 178, m: "air" },
+    { n: "Kenya",       c: "ke", x: 606, y: 250, m: "air" },
+    { n: "South Africa",c: "za", x: 567, y: 332, m: "sea" },
+    { n: "India",       c: "in", x: 716, y: 196, m: "air" },
+    { n: "Thailand",    c: "th", x: 778, y: 210, m: "air" },
+    { n: "China",       c: "cn", x: 792, y: 156, m: "sea" },
+    { n: "Peru",        c: "pe", x: 292, y: 280, m: "air" },
+    { n: "Chile",       c: "cl", x: 305, y: 344, m: "sea" },
+    { n: "USA",         c: "us", x: 232, y: 150, m: "sea" },
+    { n: "Australia",   c: "au", x: 865, y: 320, m: "sea" },
   ];
 
   const svgNS = "http://www.w3.org/2000/svg";
@@ -184,36 +184,49 @@
   svg.appendChild(frag);
   mount.appendChild(svg);
 
-  // country chips
+  // country chips (flag images via flagcdn — rendered by the visitor's browser)
   const airWrap = document.getElementById("airChips");
   const seaWrap = document.getElementById("seaChips");
-  const extraAir = [{ n: "Jordan", f: "🇯🇴" }, { n: "Lebanon", f: "🇱🇧" }, { n: "Vietnam", f: "🇻🇳" }, { n: "Ethiopia", f: "🇪🇹" }];
-  const extraSea = [{ n: "Brazil", f: "🇧🇷" }, { n: "New Zealand", f: "🇳🇿" }, { n: "Iran", f: "🇮🇷" }, { n: "Pakistan", f: "🇵🇰" }, { n: "Morocco", f: "🇲🇦" }];
+  const extraAir = [{ n: "Jordan", c: "jo" }, { n: "Lebanon", c: "lb" }, { n: "Vietnam", c: "vn" }, { n: "Ethiopia", c: "et" }];
+  const extraSea = [{ n: "Brazil", c: "br" }, { n: "New Zealand", c: "nz" }, { n: "Iran", c: "ir" }, { n: "Pakistan", c: "pk" }, { n: "Morocco", c: "ma" }];
   const makeChip = (o) => {
     const s = document.createElement("span");
     s.className = "chip";
-    s.innerHTML = `<span class="chip__flag">${o.f}</span>${o.n}`;
+    s.innerHTML =
+      `<img class="chip__flag" src="https://flagcdn.com/w40/${o.c}.png" ` +
+      `srcset="https://flagcdn.com/w80/${o.c}.png 2x" width="26" height="18" ` +
+      `alt="${o.n} flag" loading="lazy" />${o.n}`;
     return s;
   };
   origins.filter((o) => o.m === "air").concat(extraAir).forEach((o) => airWrap.appendChild(makeChip(o)));
   origins.filter((o) => o.m === "sea").concat(extraSea).forEach((o) => seaWrap.appendChild(makeChip(o)));
 })();
 
-/* ----- Client logo marquee (replace with real authorised logos) ----- */
+/* ----- Client logo marquees -----
+   NOTE: These are the UAE hospitality & retail brands RAKAEZ GOODS supplies,
+   shown as styled wordmarks. Replace with official logo image assets once you
+   have permission/artwork, and only list brands you actually supply.          */
 (function () {
-  const track = document.getElementById("logosTrack");
-  if (!track) return;
-  const names = [
-    "Five<span>★</span>Palm", "Grand Resorts", "Blue Coast Hotels", "Marina Suites",
-    "Prime Hyper", "Fresh Mart", "Gourmet Grocers", "City Supermart",
-    "The Chef's Table", "Skyline Dining", "Palm Kitchens", "Royal Catering",
+  const hotels = [
+    "Atlantis", "Jumeirah", "Address Hotels", "Rotana", "Kempinski",
+    "Fairmont", "Anantara", "Marriott", "Hilton", "Emirates Palace",
   ];
-  const build = () => names.forEach((n) => {
-    const d = document.createElement("div");
-    d.className = "logo-pill"; d.innerHTML = n;
-    track.appendChild(d);
-  });
-  build(); build(); // duplicate for seamless loop
+  const retail = [
+    "Carrefour", "LuLu Hypermarket", "Spinneys", "Union Coop",
+    "Choithrams", "Al Maya", "Nesto", "Géant", "West Zone",
+  ];
+  const fill = (id, names) => {
+    const track = document.getElementById(id);
+    if (!track) return;
+    const add = () => names.forEach((n) => {
+      const d = document.createElement("div");
+      d.className = "logo-pill"; d.textContent = n;
+      track.appendChild(d);
+    });
+    add(); add(); // duplicate for seamless loop
+  };
+  fill("logosHotels", hotels);
+  fill("logosRetail", retail);
 })();
 
 /* ----- Contact form -> WhatsApp ----- */

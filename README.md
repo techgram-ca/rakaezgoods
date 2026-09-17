@@ -24,9 +24,13 @@ Plain static **HTML + CSS + JavaScript** — no build step or dependencies.
 Fonts: Fraunces (serif display) + Inter (UI), loaded from Google Fonts.
 
 ## Customisation notes
-- **Client logos:** the marquee in the Partners & Clients section uses
-  placeholder names. Replace them (in `script.js`, `logosTrack`) with your
-  actual authorised client logos/names.
+- **Client logos:** the two marquees in the Partners & Clients section list real
+  UAE hospitality & retail brands as styled wordmarks (in `script.js`, the
+  `hotels` and `retail` arrays). Only display brands you actually supply and are
+  authorised to feature, and swap the wordmarks for each brand's official logo
+  image asset once you have permission/artwork.
+- **Country flags:** flags render from flagcdn.com in the visitor's browser
+  (defined by ISO code in the `origins` / `extraAir` / `extraSea` arrays).
 - **Images:** hero and section images load from Unsplash. Swap the URLs in
   `index.html` for your own brand photography for production.
 - **Sourcing map:** origins are defined in the `origins` array in `script.js`.
