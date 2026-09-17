@@ -52,11 +52,22 @@
   const nav = document.getElementById("nav");
   const closeBtn = document.getElementById("navClose");
   if (!toggle || !nav) return;
+  let scrollY = 0;
   const setOpen = (open) => {
+    const isOpen = nav.classList.contains("is-open");
+    if (open === isOpen) return;
     nav.classList.toggle("is-open", open);
     toggle.classList.toggle("is-open", open);
     toggle.setAttribute("aria-expanded", String(open));
-    document.body.classList.toggle("nav-open", open); // lock background scroll
+    if (open) {
+      scrollY = window.scrollY || window.pageYOffset;
+      document.body.style.top = `-${scrollY}px`;
+      document.body.classList.add("nav-open");   // position:fixed lock (iOS-safe)
+    } else {
+      document.body.classList.remove("nav-open");
+      document.body.style.top = "";
+      window.scrollTo(0, scrollY);
+    }
   };
   toggle.addEventListener("click", () => setOpen(!nav.classList.contains("is-open")));
   if (closeBtn) closeBtn.addEventListener("click", () => setOpen(false));
@@ -187,6 +198,13 @@
 
   svg.appendChild(frag);
   mount.appendChild(svg);
+
+  // zoom in on small screens by cropping the viewBox to the populated region
+  const mq = window.matchMedia("(max-width: 760px)");
+  const setViewBox = () => svg.setAttribute("viewBox", mq.matches ? "185 78 720 300" : `0 0 ${W} ${H}`);
+  setViewBox();
+  if (mq.addEventListener) mq.addEventListener("change", setViewBox);
+  else if (mq.addListener) mq.addListener(setViewBox);
 
   // country chips (flag images via flagcdn — rendered by the visitor's browser)
   const airWrap = document.getElementById("airChips");
